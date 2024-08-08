@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kumbh+Sans:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Decodificador</title>
+  </head>
+  <body>
+    <main class="container">
+      <section class="container__left">
+        <img class="logo" src="./assets/logo.svg" alt="logo" />
+        <textarea class="textarea" placeholder="Digite seu texto aqui..."></textarea>
+        <div class="error">
+          <img src="./assets/exclamation.svg" />
+          <p id="error_message">Apenas letras minúsculas e sem acento.</p>
+        </div>
+        <div class="button__container">
+          <button id="encrypt" class="button dark" role="button">
+            Criptografar
+          </button>
+          <button id="decrypt" class="button light" role="button">
+            Descriptografar
+          </button>
+        </div>
+      </section>
+      <section id="decrypt_container" class="container__right">
+        <div class="container__right_figure">
+          <img
+            class="figure"
+            src="./assets/figure.svg"
+            alt="Mulher olhando um diamante com uma lupa"
+          />
+          <h2>Nenhuma mensagem encontrada</h2>
+          <p>
+            Digite um texto que você deseja criptografar ou descriptografar.
+          </p>
+        </div>
+        <p class="output"></p>
+        <button class="button" id="button_copy">Copiar</button>
+      </section>
+    </main>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>

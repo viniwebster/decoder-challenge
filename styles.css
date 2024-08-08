@@ -1,0 +1,218 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Kumbh Sans", sans-serif;
+}
+
+:root {
+    --bg-color: #6AD4DD;
+    --dark-color: #7AA2E3;
+    --light-color: #97E7E1;
+    --very-light-color: #F8F6E3;
+}
+
+body {
+    display: flex;
+    background-color: var(--bg-color);
+    width: 100%;
+    min-height: 100dvh;
+    padding: 64px;
+}
+
+.container {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 62px;
+}
+
+.container__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 32px;
+    height: 100%;
+    width: 50%;
+}
+
+.container .logo {
+    width: 25px;
+}
+
+.container__left .textarea {
+    height: 100%;
+    font-size: 32px;
+    color: var(--very-light-color);
+
+    background-color: transparent;
+
+    resize: none;
+    border: none;
+    outline: none;  
+
+    scrollbar-color: var(--dark-color);
+    scroll-behavior: var(--dark-color);
+}
+
+.container__left .textarea::-webkit-scrollbar {
+    background-color: var(--bg-color);
+    width: 6px;
+    border-radius: 3px;
+}
+
+.container__left .textarea::-webkit-scrollbar-track {
+    background-color: var(--light-color);
+    border-radius: 3px;
+}
+
+.container__left .textarea::-webkit-scrollbar-thumb {
+    background-color: var(--very-light-color);
+    border-radius: 3px;
+}
+
+.container__left .error {
+    display: flex;
+    gap: 16px;
+}
+
+.container__left .error p {
+    color: rgba(73, 80, 87, 1);
+}
+
+.container__left .button__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.button {
+  appearance: button;
+  background-color: var(--dark-color);
+  background-image: none;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 20px;
+  margin: 0 5px 10px 0;
+  overflow: visible;
+  padding: 12px 40px;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.button:focus {
+  text-decoration: none;
+}
+
+.button:hover {
+  text-decoration: none;
+  background-color: var(--bg-color);
+  transition: .3s;
+}
+
+.button:active {
+  box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+  outline: 0;
+}
+
+.button:not([disabled]):active {
+  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+  transform: translate(2px, 2px);
+}
+
+.light {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
+
+@media (min-width: 768px) {
+  .button {
+    padding: 12px 50px;
+  }
+}
+
+.container__right {
+    background-color: var(--light-color);
+    
+    width: 50%;
+    height: 100%;
+    padding: 64px;
+    border-radius: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+}
+
+.container__right .container__right_figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.container__right h2, p {
+    color: var(--dark-color);
+}
+
+#button_copy {
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .container .container__left {
+        width: 100%;
+    }
+
+    .container .container__left .textarea {
+        padding: 0;
+        min-height: 200px;
+    }
+
+    .container .container__right {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        padding: 32px;
+    }
+
+    .container__left .button__container {
+        flex-direction: column;
+    }
+
+    .container .container__right {
+        padding: 32px;
+        word-break: normal;
+    }
+
+    .container .container__right .figure{
+        width: 100%;
+    }
+}
