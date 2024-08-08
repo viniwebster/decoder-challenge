@@ -30,23 +30,24 @@ const keyDecrypt = [
 
 //Executa função de encriptar ao clicar no botao criptografar
 btnEncrypt.addEventListener("click", () => {
-  //checa para ver se o campo de texto possue o minimo de caracteres
-  if (textarea.value.length > minCharacter) {
+  let regExp = /^[a-z\s,.!?]*$/;
+  //checa para ver se o campo de texto possui os requisitos
+  if (regExp.test(textarea.value)) {
     output.innerHTML = encrypt(textarea.value, keyEncrypt);
     changeStyleOutput();
   } else {
-    //Caso nao tenha o minimo de caracteres executa a função errorMessage exibindo a mensagem de erro na página
-    errorMessage(`O texto deve conter no minimo ${minCharacter} caracteres! `);
+    //Caso nao tenha os requisitos executa a função errorMessage exibindo a mensagem de erro na página
+    errorMessage(`O texto não pode conter caracteres especiais e letras maiusculas!`);
   }
 });
 
-//Executa a função desencriptar no botão descriptografar, OBS: As validações são as mesmas do botão criptografar
+//Executa a função desencriptar no botão descriptografar
 btnDecrypt.addEventListener("click", () => {
   if (textarea.value.length > minCharacter) {
     output.innerHTML = decrypt(textarea.value, keyDecrypt);
     changeStyleOutput();
   } else {
-    errorMessage(`O texto deve conter no minimo ${minCharacter} caracteres! `);
+    errorMessage(`O texto não pode conter caracteres especiais e letras maiusculas!`);
   }
 });
 
